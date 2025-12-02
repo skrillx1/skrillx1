@@ -1,0 +1,55 @@
+name: Generate Pac-Man Contribution Graph
+
+on:
+  workflow_dispatch:   # manual trigger
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 2 * * *"   # run daily at 02:00 UTC (adjust if you like)
+
+permissions:
+  contents: write   # allow action to commit generated SVG
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Generate Pac-Man Contribution Graph (SVG)
+        uses: abozanona/pacman-contribution-graph@main
+        with:
+          # required: your GitHub username (your profile)
+          username: 'skrillx1'
+
+          # optional inputs — tweak as needed:
+          # platform: 'github' or 'gitlab'
+          platform: 'github'
+          # theme examples: 'github-light', 'github-dark', 'gitlab-dark'
+          theme: 'github-light'
+          # output: 'svg' or 'canvas' (we want svg to embed in README)
+          output: 'svg'
+          # speed: integer (1 = normal, 2 = faster)
+          speed: '1'
+          # sound: 'true' or 'false' (no effect for svg output)
+          sound: 'false'
+          # filename to write in the repo (action will commit this file)
+          file_name: 'pacman-contribution-graph.svg'
+
+      - name: Commit generated SVG (if action didn't commit it already)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -f pacman-contribution-graph.svg ]; then
+            git add pacman-contribution-graph.svg || true
+            git commit -m "chore: update pacman contribution graph" || echo "nothing to commit"
+            git push origin HEAD:main || echo "push failed (maybe no changes)"
+          else
+            echo "SVG not found — check action logs"
+          fi
