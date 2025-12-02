@@ -1,10 +1,9 @@
-## My Contribution Graph
-
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/[USERNAME]/[USERNAME]/output/pacman-contribution-graph-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/[USERNAME]/[USERNAME]/output/pacman-contribution-graph.svg">
-    <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/[USERNAME]/[USERNAME]/output/pacman-contribution-graph.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/skrillx1/skrillx1/blob/main/pacman-contributions.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/skrillx1/skrillx1/blob/main/pacman-contributions.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/skrillx1/skrillx1/output/pacman-contribution-graph.svg">
 </picture>
+
 
 <h1 align="center">👋 Hi, I’m <strong>Rustum Goden</strong></h1>
 <p align="center">A passionate developer who loves clean UI, cool animations, and building useful things.</p>
