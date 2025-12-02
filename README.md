@@ -1,7 +1,10 @@
-<!-- Pac-Man Contribution Game (generated) -->
-<p align="center">
-  <img src="./pacman-contribution-graph.svg" alt="Pac-Man Contribution Graph" width="900" />
-</p>
+## My Contribution Graph
+
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/[USERNAME]/[USERNAME]/output/pacman-contribution-graph-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/[USERNAME]/[USERNAME]/output/pacman-contribution-graph.svg">
+    <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/[USERNAME]/[USERNAME]/output/pacman-contribution-graph.svg">
+</picture>
 
 <h1 align="center">👋 Hi, I’m <strong>Rustum Goden</strong></h1>
 <p align="center">A passionate developer who loves clean UI, cool animations, and building useful things.</p>
